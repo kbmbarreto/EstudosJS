@@ -1,4 +1,4 @@
-import SignupPage from "../pages/SignupPage";
+import signup from "../pages/SignupPage";
 
 describe('Cadastro', () => {
 
@@ -20,7 +20,6 @@ describe('Cadastro', () => {
     //     cy.log('Tudo aqui é executado sempre DEPOIS de cada caso de teste')
     // })
 
-
     it('Usuário deve se tornar um entregador', () => {
 
         //Massa de teste
@@ -40,8 +39,6 @@ describe('Cadastro', () => {
             delivery_method: 'Moto',
             cnh: 'images/cnh-digital.jpg'
         }
-
-        var signup = new SignupPage()
 
         signup.go()
         signup.fillForm(deliver)
@@ -69,8 +66,6 @@ describe('Cadastro', () => {
             delivery_method: 'Moto',
             cnh: 'images/cnh-digital.jpg'
         }
-
-        var signup = new SignupPage()
 
         signup.go()
         signup.fillForm(deliver)
