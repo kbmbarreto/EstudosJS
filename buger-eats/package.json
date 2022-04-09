@@ -1,0 +1,14 @@
+{
+  "name": "buger-eats",
+  "version": "1.0.0",
+  "description": "Automacao de testes web",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Kleber Barreto de Macedo",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^9.5.3"
+  }
+}
