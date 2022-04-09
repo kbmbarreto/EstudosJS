@@ -30,5 +30,21 @@
     },
     "delivery_method": "Moto",
     "cnh": "images/cnh-digital.jpg"
+  },
+  "email_inv": {
+    "name": "Kleber Barreto de Macedo",
+    "cpf": "52959371003",
+    "email": "tikarakatika.zip.net",
+    "whatsapp": "11999999999",
+    "address": {
+      "postalcode": "05564-200",
+      "street": "Avenida Engenheiro Heitor Antônio Eiras Garcia",
+      "number": "627",
+      "details": "Apto 21",
+      "district": "Jardim Esmeralda",
+      "city_state": "São Paulo/SP"
+    },
+    "delivery_method": "Moto",
+    "cnh": "images/cnh-digital.jpg"
   }
 }

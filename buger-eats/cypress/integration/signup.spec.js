@@ -26,7 +26,7 @@ describe('Cadastro', () => {
         })
     })
 
-    it('Usuário deve se tornar um entregador', function() {
+    it('User should be deliver', function() {
 
         signup.go()
         signup.fillForm(this.deliver.signup)
@@ -35,11 +35,19 @@ describe('Cadastro', () => {
         signup.modalContentShouldBe(expectedMessage)
     })
 
-    it('CPF incorreto', function() {
+    it('Incorrect document', function() {
 
         signup.go()
         signup.fillForm(this.deliver.cpf_inv)
         signup.submit()
         signup.alertMessageShouldBe('Oops! CPF inválido')
+    })
+
+    it('Incorrect email', function() {
+
+        signup.go()
+        signup.fillForm(this.deliver.email_inv)
+        signup.submit()
+        signup.alertMessageShouldBe('Oops! Email com formato inválido.')
     })
 })
