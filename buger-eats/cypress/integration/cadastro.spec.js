@@ -11,7 +11,7 @@ describe('Cadastro', () => {
         //Massa de teste
         var entregador = {
             nome: 'Kleber Barreto de Macedo',
-            cpf: '00000000000',
+            cpf: '52959371003',
             email: 'tikarakatika@zip.net',
             whatsapp: '11999999999',
             endereco: {
@@ -49,5 +49,9 @@ describe('Cadastro', () => {
         input[accept$="image"] = $ termina com image
          */
         cy.get('input[accept^="image"]').attachFile(entregador.cnh)
+        cy.get('form button[type="submit"]').click()
+
+        const expectedMessage = "Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato."
+        cy.get('.swal2-container .swal2-html-container').should('have.text', expectedMessage)
     })
 })
