@@ -1,8 +1,27 @@
 import SignupPage from "../pages/SignupPage";
 
 describe('Cadastro', () => {
-    it('Usuário deve se tornar um entregador', () => {
 
+    // Ganchos do Cypress:
+    //
+    // before(function() {
+    //     cy.log('Tudo aqui é executado uma única vez ANTES de TODOS os casos de testes')
+    // })
+    //
+    // beforeEach(function() {
+    //     cy.log('Tudo aqui é executado sempre ANTES de cada caso de teste')
+    // })
+    //
+    // after(function() {
+    //     cy.log('Tudo aqui é executado uma única vez DEPOIS de TODOS os casos de testes')
+    // })
+    //
+    // afterEach(function() {
+    //     cy.log('Tudo aqui é executado sempre DEPOIS de cada caso de teste')
+    // })
+
+
+    it('Usuário deve se tornar um entregador', () => {
 
         //Massa de teste
         var deliver = {
