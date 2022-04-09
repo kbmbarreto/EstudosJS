@@ -21,7 +21,9 @@ describe('Cadastro', () => {
                 complemento: 'Apto 21',
                 bairro: 'Jardim Esmeralda',
                 cidade_uf: 'São Paulo/SP'
-            }
+            },
+            metodo_entrega: 'Moto',
+            cnh: 'images/cnh-digital.jpg'
         }
 
         cy.get('input[name="name"]').type(entregador.nome)
@@ -33,5 +35,19 @@ describe('Cadastro', () => {
         cy.get('input[type=button][value="Buscar CEP"]').click()
         cy.get('input[name="address-number"]').type(entregador.endereco.numero)
         cy.get('input[name="address-details"]').type(entregador.endereco.complemento)
+
+        cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
+        cy.get('input[name="district"]').should('have.value', entregador.endereco.bairro)
+        cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade_uf)
+
+        cy.contains('.delivery-method li', entregador.metodo_entrega).click()
+        /*
+        Anotações:
+
+        input[accept^="image"] = ^ começa com image
+        input[accept*="image"] = * contain image
+        input[accept$="image"] = $ termina com image
+         */
+        cy.get('input[accept^="image"]').attachFile(entregador.cnh)
     })
 })
