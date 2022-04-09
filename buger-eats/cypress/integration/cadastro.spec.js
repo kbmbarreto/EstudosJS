@@ -9,38 +9,38 @@ describe('Cadastro', () => {
         cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas')
 
         //Massa de teste
-        var entregador = {
-            nome: 'Kleber Barreto de Macedo',
+        var deliver = {
+            name: 'Kleber Barreto de Macedo',
             cpf: '52959371003',
             email: 'tikarakatika@zip.net',
             whatsapp: '11999999999',
-            endereco: {
-                cep: '05564-200',
-                rua: 'Avenida Engenheiro Heitor Antônio Eiras Garcia',
-                numero: '627',
-                complemento: 'Apto 21',
-                bairro: 'Jardim Esmeralda',
-                cidade_uf: 'São Paulo/SP'
+            address: {
+                postalcode: '05564-200',
+                street: 'Avenida Engenheiro Heitor Antônio Eiras Garcia',
+                number: '627',
+                details: 'Apto 21',
+                district: 'Jardim Esmeralda',
+                city_state: 'São Paulo/SP'
             },
-            metodo_entrega: 'Moto',
+            delivery_method: 'Moto',
             cnh: 'images/cnh-digital.jpg'
         }
 
-        cy.get('input[name="name"]').type(entregador.nome)
-        cy.get('input[name="cpf"]').type(entregador.cpf)
-        cy.get('input[name="email"]').type(entregador.email)
-        cy.get('input[name="whatsapp"]').type(entregador.whatsapp)
+        cy.get('input[name="name"]').type(deliver.name)
+        cy.get('input[name="cpf"]').type(deliver.cpf)
+        cy.get('input[name="email"]').type(deliver.email)
+        cy.get('input[name="whatsapp"]').type(deliver.whatsapp)
 
-        cy.get('input[name="postalcode"]').type(entregador.endereco.cep)
+        cy.get('input[name="postalcode"]').type(deliver.address.postalcode)
         cy.get('input[type=button][value="Buscar CEP"]').click()
-        cy.get('input[name="address-number"]').type(entregador.endereco.numero)
-        cy.get('input[name="address-details"]').type(entregador.endereco.complemento)
+        cy.get('input[name="address-number"]').type(deliver.address.number)
+        cy.get('input[name="address-details"]').type(deliver.address.details)
 
-        cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
-        cy.get('input[name="district"]').should('have.value', entregador.endereco.bairro)
-        cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade_uf)
+        cy.get('input[name="address"]').should('have.value', deliver.address.street)
+        cy.get('input[name="district"]').should('have.value', deliver.address.district)
+        cy.get('input[name="city-uf"]').should('have.value', deliver.address.city_state)
 
-        cy.contains('.delivery-method li', entregador.metodo_entrega).click()
+        cy.contains('.delivery-method li', deliver.delivery_method).click()
         /*
         Anotações:
 
@@ -48,7 +48,7 @@ describe('Cadastro', () => {
         input[accept*="image"] = * contain image
         input[accept$="image"] = $ termina com image
          */
-        cy.get('input[accept^="image"]').attachFile(entregador.cnh)
+        cy.get('input[accept^="image"]').attachFile(deliver.cnh)
         cy.get('form button[type="submit"]').click()
 
         const expectedMessage = "Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato."
@@ -63,38 +63,38 @@ describe('Cadastro', () => {
         cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas')
 
         //Massa de teste
-        var entregador = {
-            nome: 'Kleber Barreto de Macedo',
-            cpf: '000000000',
+        var deliver = {
+            name: 'Kleber Barreto de Macedo',
+            cpf: '0000000000',
             email: 'tikarakatika@zip.net',
             whatsapp: '11999999999',
-            endereco: {
-                cep: '05564-200',
-                rua: 'Avenida Engenheiro Heitor Antônio Eiras Garcia',
-                numero: '627',
-                complemento: 'Apto 21',
-                bairro: 'Jardim Esmeralda',
-                cidade_uf: 'São Paulo/SP'
+            address: {
+                postalcode: '05564-200',
+                street: 'Avenida Engenheiro Heitor Antônio Eiras Garcia',
+                number: '627',
+                details: 'Apto 21',
+                district: 'Jardim Esmeralda',
+                city_state: 'São Paulo/SP'
             },
-            metodo_entrega: 'Moto',
+            delivery_method: 'Moto',
             cnh: 'images/cnh-digital.jpg'
         }
 
-        cy.get('input[name="name"]').type(entregador.nome)
-        cy.get('input[name="cpf"]').type(entregador.cpf)
-        cy.get('input[name="email"]').type(entregador.email)
-        cy.get('input[name="whatsapp"]').type(entregador.whatsapp)
+        cy.get('input[name="name"]').type(deliver.name)
+        cy.get('input[name="cpf"]').type(deliver.cpf)
+        cy.get('input[name="email"]').type(deliver.email)
+        cy.get('input[name="whatsapp"]').type(deliver.whatsapp)
 
-        cy.get('input[name="postalcode"]').type(entregador.endereco.cep)
+        cy.get('input[name="postalcode"]').type(deliver.address.postalcode)
         cy.get('input[type=button][value="Buscar CEP"]').click()
-        cy.get('input[name="address-number"]').type(entregador.endereco.numero)
-        cy.get('input[name="address-details"]').type(entregador.endereco.complemento)
+        cy.get('input[name="address-number"]').type(deliver.address.number)
+        cy.get('input[name="address-details"]').type(deliver.address.details)
 
-        cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
-        cy.get('input[name="district"]').should('have.value', entregador.endereco.bairro)
-        cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade_uf)
+        cy.get('input[name="address"]').should('have.value', deliver.address.street)
+        cy.get('input[name="district"]').should('have.value', deliver.address.district)
+        cy.get('input[name="city-uf"]').should('have.value', deliver.address.city_state)
 
-        cy.contains('.delivery-method li', entregador.metodo_entrega).click()
+        cy.contains('.delivery-method li', deliver.delivery_method).click()
         /*
         Anotações:
 
@@ -102,7 +102,7 @@ describe('Cadastro', () => {
         input[accept*="image"] = * contain image
         input[accept$="image"] = $ termina com image
          */
-        cy.get('input[accept^="image"]').attachFile(entregador.cnh)
+        cy.get('input[accept^="image"]').attachFile(deliver.cnh)
         cy.get('form button[type="submit"]').click()
 
         cy.get('.alert-error').should('have.text', 'Oops! CPF inválido')
