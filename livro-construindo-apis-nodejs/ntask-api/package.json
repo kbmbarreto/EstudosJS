@@ -8,6 +8,7 @@
   },
   "author": "Kleber Barreto de Macedo",
   "dependencies": {
+    "consign": "^0.1.6",
     "express": "^4.18.1"
   }
 }
