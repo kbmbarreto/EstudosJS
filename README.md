@@ -13,7 +13,12 @@ Cypress do Fernando Aquino, na Udemy;
 - formacao_JS_Alura: arquivos gerados no curso básico de JS para back-end, da 
 Alura;
 
+- livro-construindo-apis-nodejs: arquivos gerados nos estudos do livro Construindo 
+APIs com NodeJS, Caio Ribeiro Pereira;
+
 ## Tutoriais úteis para configurar sua estação de trabalho.
+
+- [Livro Construindo APIs REST com Node.js](https://www.casadocodigo.com.br/products/livro-apis-nodejs)
 
 - [Documentação do Node.js](https://nodejs.org/pt-br/docs/)
 
